@@ -1,3 +1,4 @@
+```
 jira_analytics_bot/
 ├── config.py             # Конфигурация приложения
 ├── jira_service.py       # Сервис для работы с Jira API
@@ -14,3 +15,4 @@ jira_analytics_bot/
 │       └── index.html    # Главная страница Web App
 ├── main.py               # Точка входа в приложение
 └── requirements.txt      # Зависимости
+```

@@ -1,0 +1,12 @@
+python-telegram-bot
+telebot
+pandas
+numexpr==2.8.4
+bottleneck==1.3.6
+jira
+python-dotenv
+openpyxl
+fastapi
+uvicorn
+jinja2
+numpy==1.26.4

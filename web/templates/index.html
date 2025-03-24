@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jira Analytics</title>
+    <!-- Telegram Web App JavaScript SDK -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <!-- Chart.js для визуализации -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container-fluid mt-3">
+        <div class="row" id="app-container">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 id="project-header">Загрузка данных...</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="nav nav-tabs" id="statsTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="hours-tab" data-bs-toggle="tab" 
+                                        data-bs-target="#hours-content" type="button" role="tab">
+                                    📊 Часы
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="tasks-tab" data-bs-toggle="tab" 
+                                        data-bs-target="#tasks-content" type="button" role="tab">
+                                    📋 Задачи
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="noworklog-tab" data-bs-toggle="tab" 
+                                        data-bs-target="#noworklog-content" type="button" role="tab">
+                                    🚫 Без журнала
+                                </button>
+                            </li>
+                        </ul>
+                        
+                        <div class="tab-content mt-3" id="statsTabsContent">
+                            <!-- Вкладка с часами -->
+                            <div class="tab-pane fade show active" id="hours-content" role="tabpanel">
+                                <div class="chart-container">
+                                    <canvas id="hoursChart"></canvas>
+                                </div>
+                                <div class="table-responsive mt-3">
+                                    <table class="table table-striped" id="hoursTable">
+                                        <thead>
+                                            <tr>
+                                                <th>Пользователь</th>
+                                                <!-- Здесь будут динамически добавлены недели -->
+                                                <th>Всего часов</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Здесь будут данные по часам -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <!-- Вкладка с задачами -->
+                            <div class="tab-pane fade" id="tasks-content" role="tabpanel">
+                                <div class="chart-container">
+                                    <canvas id="tasksChart"></canvas>
+                                </div>
+                                <div class="tasks-summary mt-3">
+                                    <!-- Здесь будут данные по задачам -->
+                                </div>
+                            </div>
+                            
+                            <!-- Вкладка с задачами без журнала работ -->
+                            <div class="tab-pane fade" id="noworklog-content" role="tabpanel">
+                                <div class="no-worklog-container">
+                                    <h4 id="no-worklog-header">Задачи без журнала работ</h4>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped" id="noWorklogTable">
+                                            <thead>
+                                                <tr>
+                                                    <th>Неделя</th>
+                                                    <th>Задача</th>
+                                                    <th>Название</th>
+                                                    <th>Пользователь</th>
+                                                    <th>Оценка времени (ч)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Здесь будут данные по задачам без журнала -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Наш JavaScript -->
+    <script src="/js/main.js"></script>
+</body>
+</html>
